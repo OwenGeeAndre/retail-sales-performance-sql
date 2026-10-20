@@ -7,9 +7,9 @@ retail-sales-performance-sql/
 │   ├── 01_exploration.sql
 │   ├── 02_data_quality.sql
 |   ├── 03_diagnostic_analysis.sql
-│   ├── 03_sales_performance.sql
-│   ├── 04_profitability.sql
-│   └── 05_advanced_analysis.sql
+│   ├── 04_sales_performance.sql
+│   ├── 05_profitability.sql
+│   └── 06_advanced_analysis.sql
 ├── results/
 │   └── key_findings.md
 └── visuals/
@@ -29,3 +29,13 @@ The checks found no missing values in the inspected sales-detail fields, and agg
 
 1. **April 30, 2025 is an extreme sales outlier:** 227 orders, 10,384 units, and approximately 3.46 million in revenue. Both typical order size and order volume were much higher than on the adjacent days. The cause remains unverified.
 2. **Recorded category sales end at different times:** Components after April 30 and Bikes after May 29, while Accessories and Clothing continue. This creates a discontinuity in the product mix and can distort later category comparisons.
+
+
+# Profitability Findings
+
+1. **Revenue:** The business recorded approximately 109.85 million in sales revenue across 31,465 orders.
+2. **Estimated product cost:** The recorded standard costs, multiplied by quantities sold, total approximately 100.47 million.
+3. **Estimated gross profit:** Revenue exceeds estimated product cost by approximately 9.37 million.
+4. **Estimated gross margin:** The estimate is 8.53%. In other words, approximately 8.53 of every 100 in revenue remains after the estimated product cost, before operating expenses and other costs excluded from this analysis.
+5. Bikes are the largest contributor to estimated gross profit with $7.94 million and a highest Revenue of $94.65 million, Accessories have the highest estimated gross margin with 50.03%.
+6. 
