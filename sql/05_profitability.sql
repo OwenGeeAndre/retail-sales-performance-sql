@@ -26,6 +26,7 @@ FROM Sales.SalesOrderDetail AS sod
 INNER JOIN Production.Product AS pp
 	ON sod.ProductID = pp.ProductID;
 
+GO
 
 ----------------- 2. PROFITABILITY BY PRODUCT CATEGORY
 SELECT COALESCE(cat.Name, 'Uncategorised') AS Category,
