@@ -23,7 +23,6 @@ ORDER BY TotalRevenue DESC;
 
 GO
 
-
 ---------------- 2. TERRITORY PERFORMANCE BY PRODUCT CATEGORY
 /* Are the territory-level profitability differences associated with the types of products sold in each territory? */
 
