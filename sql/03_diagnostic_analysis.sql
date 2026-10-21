@@ -50,7 +50,6 @@ GO
 /* The totals reconcile closely at dataset level */
 
 
-
 ------- 2. REVIEW MONTHLY REVENUE AND ESTIMATED GROSS-PROFIT PROXY
 		/* Let's check for unusual monthly patterns in revenue and profitability 
 estimates */
