@@ -2,21 +2,17 @@ USE AdventureWorks2025;
 GO
 
 -------- SIZE OF TABLES
-
-SELECT 'SalesOrderHeader' AS table_name,
-		COUNT(*) AS total_rows
+SELECT 'SalesOrderHeader' AS table_name, COUNT(*) AS total_rows
 FROM Sales.SalesOrderHeader
 
 UNION ALL
 
-SELECT 'SalesOrderDetail',
-		COUNT(*)
+SELECT 'SalesOrderDetail', COUNT(*)
 FROM Sales.SalesOrderDetail
 
 UNION ALL
 
-SELECT 'Product',
-		COUNT(*)
+SELECT 'Product', COUNT(*)
 FROM Production.Product;
 
 
@@ -27,7 +23,6 @@ SELECT MIN(OrderDate) AS first_order_date,
 FROM Sales.SalesOrderHeader;
 
 ------------- SALES COLUMNS
-
 SELECT TOP (10) SalesOrderID, OrderDate, TerritoryID, SubTotal,
     TaxAmt, Freight, TotalDue
 FROM Sales.SalesOrderHeader
@@ -49,7 +44,6 @@ FROM Sales.SalesOrderDetail;
 SELECT SUM(LineTotal) AS total_revenue,
 		SUM(OrderQty) AS units_sold,
 		COUNT(DISTINCT SalesOrderID) AS total_orders,
-		CAST(
-			SUM(LineTotal) / COUNT(DISTINCT SalesOrderID)
+		CAST(SUM(LineTotal) / COUNT(DISTINCT SalesOrderID)
 			AS DECIMAL(18,2)) AS average_order_value
 FROM Sales.SalesOrderDetail;
