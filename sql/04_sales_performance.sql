@@ -21,8 +21,9 @@ LEFT JOIN Production.ProductSubcategory AS psc
 LEFT JOIN Production.ProductCategory AS pc
 	ON psc.ProductCategoryID = pc.ProductCategoryID
 GROUP BY COALESCE(pc.Name, 'Uncateogrized')
-ORDER BY TotalRevenue DESC
+ORDER BY TotalRevenue DESC;
 
+GO
 
 ----------- Top 10 products by revenue
 DROP TABLE IF EXISTS #Top10ProductCategoryRevenue
@@ -53,6 +54,8 @@ FROM #Top10ProductCategoryRevenue
 SELECT SUM(RevenueContributionPct) AS PctContributionOfTop10
 FROM #Top10ProductCategoryRevenue;
 
+GO
+	
 ----------- Rank products by revenue
 
 WITH ProductRevenue AS (
