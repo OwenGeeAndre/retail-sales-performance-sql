@@ -14,8 +14,20 @@ retail-sales-performance-sql/
 │   └── key_findings.md
 └── visuals/
 ```
+# Project Objectives
 
-# Business Implications
+The primary objective of this project was to analyze retail sales transactions using SQL to evaluate business sales performance, examine estimated product profitability, and identify patterns that can support informed business decisions and visualize these results with Power BI.
+
+The specific objectives were to:
+
+1. Evaluate overall sales performance using revenue, order volume, units sold, average order value, and sales trends over time.
+2. Assess revenue contribution and concentration across product categories and individual products.
+3. Estimate gross profit and gross margin across the business, product categories, and individual products to identify differences in estimated profitability.
+4. Examine revenue and estimated profitability across geographical sales territories and investigate differences in product-category contribution.
+5. Investigate factors associated with variations in sales performance and estimated profitability across products, territories, and time.
+6. Assess data reliability and identify unusual sales patterns or reporting discontinuities that could affect the interpretation of business performance.
+
+# Results and Business Implications
 
 ## 1. Revenue Depends Heavily on Bikes and Components
 Bikes generated 86.17% of total revenue, while Components contributed 10.74%. Together, these categories accounted for 96.91% of revenue.
