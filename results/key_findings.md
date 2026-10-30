@@ -1,6 +1,40 @@
-# Preliminary Sales Performance Findings
+# 1. Project Overview
+This document presents the key findings from a cycle store supply chain analysis.
 
-1. **Revenue:** The business recorded approximately 109.85 million in sales revenue across 31,465 orders.
+The analysis uses SQL Server to evaluate sales performance, revenue contribution, estimated product profitability, and differences across products, categories, territories, and periods.
+
+# 2. Exploration Analysis
+
+## 2.1 Dataset Overview
+The initial exploration established the size and structure of the primary datasets used in the analysis.
+
+| Dataset | Sales Order Header | Sales Order Detail | Product Catalogue |
+| :--- | :--- | :--- | :--- |
+| Number of Records | 31,465 | 121,317 | 504 |
+
+The Sales Order Header contains records of every sales, Sales Order Detail contains records of every item sold in each sale. The Catalogue of products contain 504 products, this is not the number of distinct products purchased, just available items offered.
+
+## 2.2 Sales Period
+The available sales records cover the following period:
+
+| Metric | First Order Date | Last Order Date | Total Orders |
+| :--- | :--- | :--- | :--- |
+| Result | 30 May 2022 | 29 June 2025 |   31,465 |
+
+The data covers just over three (3) years of activity
+
+## 2.3 Baseline Sales Performance
+The initial sales KPI analysis established the following baseline:
+
+| Metric | Total Revenue | Total Units Sold | Total Orders | Average Order Value |
+| :--- | :--- | :--- | :--- | :--- |
+| Result | $109,846,381.40 | 274,914 | 31,465 | $3,491.07 |
+
+The business raised approximately $109.85 million in sales revenue across 31,465 orders, with 274,914 units sold.
+These figures establish the baseline against which subsequent analyses of sales trends, product contribution, and profitability can be evaluated.
+
+------
+
 2. **Estimated product cost:** The recorded standard costs, multiplied by quantities sold, total approximately 100.47 million.
 3. **Revenue concentration by category:** Bikes generated 86.17% of total revenue, making them the dominant product category.
 4. **Secondary revenue contributor:** Components accounted for 10.74% of revenue. Bikes and Components combined contributed 96.91% of total revenue.
