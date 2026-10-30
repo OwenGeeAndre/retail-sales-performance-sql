@@ -1,7 +1,7 @@
 # Project Objectives
 
 ## Overall Objective
-This project aims to analyze sales performance and profitability of a cycling store supply chain using SQL Server to identify key revenue contributors, assess profitability across products and territories, evaluate data reliability, and investigate unusual sales patterns that may affect business decisions.
+This project aims to analyze sales performance and profitability of a cycling store supply chain using SQL Server to identify key revenue contributors, assess profitability across products and territories, evaluate data reliability, and investigate unusual sales patterns that may affect business decisions and visualize these findings with Power BI.
 
 ## Specific Objectives
 
