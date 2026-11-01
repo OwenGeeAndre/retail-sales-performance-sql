@@ -114,16 +114,26 @@ Overall, 56 out of 266 products sold (21.05%) recorded negative estimated gross 
 * April 2025 recorded estimated gross profit of $735,187.74 and a margin of 14.08%.
 * May 2025 recorded estimated gross profit of $789,823.55 and a margin of 41.39%.
 
+# 6. Other Findings
 
+## 6.1 Territory performance
+- Southwest generated the highest revenue: $24.18 million.
+- Australia generated the highest estimated gross profit: $3.43 million.
+- Australia had the highest estimated gross margin: 32.23%.
+- Northeast recorded the weakest estimated margin: -3.88%.
+## 6.2 Territory performance by category
+- Bikes dominate revenue across all territories.
+- Australia's Bikes margin was 32.40%.
+- Canada's Bikes margin was only 1.13%, despite its substantial Bikes revenue.
+- Central, Northeast and Southeast recorded negative estimated Bikes margins.
+- Accessories were profitable across all ten territories, with margins ranging from 34.68% to 58.90%.
+## 6.3 Product revenue contribution versus profitability
+- The six leading Mountain-200 variants contributed 20.29% of total revenue and approximately $3.92 million in estimated gross profit.
+- Road-250 Black, 44 generated $2.52 million in revenue but recorded an estimated gross loss of $36,367.
+- Road-150 Red, 48 generated a 30.53% estimated gross margin despite ranking seventeenth by revenue.
+- The top ten products contributed 28.23% of total revenue.
 ------
 
-2. **Estimated product cost:** The recorded standard costs, multiplied by quantities sold, total approximately 100.47 million.
-3. 
-4. **Secondary revenue contributor:** Components accounted for 10.74% of revenue. Bikes and Components combined contributed 96.91% of total revenue.
-5. **Leading product:** Mountain-200 Black, 38 ranked first among 266 products, generating 4.40 million in revenue from 2,977 units sold.
-6. **Product concentration:** The highest-revenue product contributed approximately 4.01% of total revenue. The top 10 products collectively accounted for approximately 28.2%, suggesting that revenue is spread across multiple leading products.
-
-**Limitation:** These findings describe sales revenue and volume, not profitability. Profitability requires suitable cost data, and any conclusions should account for the limitations of the available cost fields.
 
 
 # Diagnostic Findings
