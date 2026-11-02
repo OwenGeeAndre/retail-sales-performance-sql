@@ -22,7 +22,7 @@ Bikes generated 86.17% of total revenue, while Components contributed 10.74%. To
 
 **Business implication:** The business is highly dependent on these two categories. Management should protect their sales performance while assessing whether other categories offer opportunities to diversify revenue.
 
-## 2. High Revenue Does Not Guarantee Strong Profitability
+## 2. High Revenue does not Guarantee Strong Profitability
 The overall estimated gross margin was 8.53%. Bikes generated the largest estimated gross profit of approximately $7.94 million, while Components had a relatively low estimated gross margin of 4.15%. Accessories achieved the highest category margin at 50.03%, although its revenue contribution was only 1.16%.
 
 **Business implication:** Management should evaluate products and categories using both revenue and estimated gross profitability. High-margin categories may offer growth opportunities, but their costs, sales potential, and scalability should be assessed before reallocating resources.
@@ -32,22 +32,17 @@ Australia recorded an estimated gross margin of 32.23%, compared with 2.47% for 
 
 **Business implication:** Management should investigate differences in product mix, pricing, and costs across territories. The negative estimated margins in three US territories warrant further review before decisions are made about pricing or market strategy.
 
-## 4. Some High-Revenue Products Have Weak Estimated Profitability
+## 4. Some High-Revenue Products have Weak Estimated Profitability
 Some products generated substantial revenue but had very low or negative estimated gross margins. For example, Road-250 Black, 44 generated approximately $2.52 million in revenue but had an estimated gross loss of $36,367.14.
 
 **Business implication:** Product-level revenue rankings alone are insufficient for commercial decisions. Management should investigate low-margin and loss-making products to determine whether pricing, costs, or other factors need attention.
 
-## 5. Sales Patterns Include Significant Anomalies and Category Cutoffs
-April 30, 2025, recorded approximately $3.46 million in revenue, substantially exceeding the adjacent days examined. Sales for some product categories also stopped before the end of the dataset, while other categories continued.
-
-**Business implication:** Management should validate the unusual sales spike and investigate the category cutoffs before using these periods for forecasting, performance comparisons, or operational planning. The analysis identifies anomalies but does not establish their causes.
-
-## 6. Data Quality Supports Analysis, but Historical Cost Limitations Remain
+## 5. Data Quality Supports Analysis, but Historical Cost Limitations Remain
 The checked order-detail records contained no missing values in the key fields examined, and the differences between stored and recalculated sales amounts were negligible. However, profitability was estimated using current product standard costs applied to historical sales quantities.
 
 **Business implication:** The sales results provide a useful basis for performance analysis. However, management should validate historical product costs before using the estimated profit figures for pricing, budgeting, or other financial decisions.
 
-## 7. Sales Performance Should Be Monitored Across Multiple Dimensions
+## 6. Sales Performance should be Monitored Across Multiple Dimensions
 The project examined revenue, units sold, orders, revenue contribution, estimated gross profit, estimated gross margin, and changes over time across products, categories, and territories.
 
 **Business implication:** A recurring performance dashboard could help management monitor sales trends, identify changes in category and territory performance, and prioritize products requiring investigation. Revenue and profitability indicators should be interpreted together.
