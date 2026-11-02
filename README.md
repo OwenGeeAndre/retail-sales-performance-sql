@@ -3,7 +3,7 @@
 ```text
 retail-sales-performance-sql/
 ├── README.md
-├── Project Objectives
+├── Project_Objectives.md
 ├── sql/
 │   ├── 01_exploration.sql
 │   ├── 02_data_quality.sql
