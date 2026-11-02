@@ -1,0 +1,41 @@
+﻿Territory,ProductCategory,TotalOrders,UnitsSold,TotalRevenue,EstimatedGrossProfit,EstimatedGrossMarginPct
+"Australia, AU",Bikes,4575,6028,10175870.74,3297243.30,32.40
+"Australia, AU",Components,85,1019,203651.31,13700.55,6.73
+"Australia, AU",Accessories,3709,7867,162638.16,95795.51,58.90
+"Australia, AU",Clothing,1616,3379,113175.75,27516.02,24.31
+"Canada, CA",Bikes,1507,14414,13457682.98,152145.96,1.13
+"Canada, CA",Components,474,9396,2244470.02,84354.51,3.76
+"Canada, CA",Clothing,1528,14808,432112.25,62002.05,14.35
+"Canada, CA",Accessories,2852,10763,221505.20,105813.89,47.77
+"Central, US",Bikes,310,7492,6761069.95,-218352.76,-3.23
+"Central, US",Components,246,4029,947404.83,44974.12,4.75
+"Central, US",Clothing,250,5813,154237.59,14852.50,9.63
+"Central, US",Accessories,138,2159,46296.64,16075.38,34.72
+"France, FR",Bikes,1600,5738,6114241.36,776648.25,12.70
+"France, FR",Components,134,3625,870748.34,38253.81,4.39
+"France, FR",Clothing,779,5153,155127.44,22333.75,14.40
+"France, FR",Accessories,1755,5390,111438.51,55858.87,50.13
+"Germany, DE",Bikes,1701,3510,4382176.51,969537.64,22.12
+"Germany, DE",Components,97,1299,337786.52,14420.37,4.27
+"Germany, DE",Clothing,741,3524,98113.92,7959.72,8.11
+"Germany, DE",Accessories,1714,4810,97330.66,51098.96,52.50
+"Northeast, US",Bikes,288,7153,5675571.16,-331170.30,-5.84
+"Northeast, US",Components,264,4388,1051597.98,30118.22,2.86
+"Northeast, US",Clothing,208,5908,161203.63,13872.73,8.61
+"Northeast, US",Accessories,121,2394,51001.72,17686.17,34.68
+"Northwest, US",Bikes,2340,12511,13882022.98,1121571.97,8.08
+"Northwest, US",Components,359,7462,1783595.23,104101.31,5.84
+"Northwest, US",Clothing,1480,8688,256254.57,51312.33,20.02
+"Northwest, US",Accessories,2976,8115,163069.77,87616.28,53.73
+"Southeast, US",Bikes,392,6964,6710273.22,-214654.54,-3.20
+"Southeast, US",Components,308,3690,959298.07,28309.18,2.95
+"Southeast, US",Clothing,279,6087,164334.45,19355.04,11.78
+"Southeast, US",Accessories,149,2134,45749.33,15932.90,34.83
+"Southwest, US",Bikes,3649,20518,20803673.94,1272174.56,6.12
+"Southwest, US",Components,553,11075,2692201.20,96410.53,3.58
+"Southwest, US",Clothing,2030,15118,434914.62,67309.98,15.48
+"Southwest, US",Accessories,3991,12394,253819.85,127815.74,50.36
+"United Kingdom, GB",Bikes,2006,5940,6688589.87,1111249.95,16.61
+"United Kingdom, GB",Components,130,3061,711839.79,35590.58,5.00
+"United Kingdom, GB",Clothing,966,5192,151068.31,22368.04,14.81
+"United Kingdom, GB",Accessories,2119,5906,119223.07,62700.56,52.59

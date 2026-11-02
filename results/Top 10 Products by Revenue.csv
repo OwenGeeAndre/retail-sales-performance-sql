@@ -1,0 +1,11 @@
+﻿ProductID,ProductName,ProductCategory,UnitsSold,TotalRevenue,RevenueContributionPct,RevenuePerUnit
+782,"Mountain-200 Black, 38",Bikes,2977,4400592.80,4.01,1478.20
+783,"Mountain-200 Black, 42",Bikes,2664,4009494.76,3.65,1505.07
+779,"Mountain-200 Silver, 38",Bikes,2394,3693678.03,3.36,1542.89
+780,"Mountain-200 Silver, 42",Bikes,2234,3438478.86,3.13,1539.16
+781,"Mountain-200 Silver, 46",Bikes,2216,3434256.94,3.13,1549.75
+784,"Mountain-200 Black, 46",Bikes,2111,3309673.22,3.01,1567.82
+793,"Road-250 Black, 44",Bikes,1642,2516857.31,2.29,1532.80
+794,"Road-250 Black, 48",Bikes,1498,2347655.95,2.14,1567.19
+795,"Road-250 Black, 52",Bikes,1245,2012447.78,1.83,1616.42
+753,"Road-150 Red, 56",Bikes,664,1847818.63,1.68,2782.86
