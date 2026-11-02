@@ -4,32 +4,29 @@
 			Estimated Gross Profit ==> Revenue - Estimated Product Cost
 			Estimated Gross Margin ==> Estimated Gross Profit / Revenue * 100
 
-IMPORTANT:
-			Gross profit and gross margin are estimates based on the
-			StandardCost currently recorded in Production.Product.
-			They are not verified historical profit figures.
 */
 
 USE AdventureWorks2025;
 GO
 
 ----------------- 1. OVERALL PROFITABILITY
-
-
+WITH RevenueStats AS (
 SELECT COUNT(DISTINCT sod.SalesOrderID) AS TotalOrders, SUM(sod.OrderQty) AS TotalUnitsSold,
 	CAST(SUM(sod.LineTotal) AS DECIMAL(18,2)) AS TotalRevenue, 
-	CAST(SUM(sod.OrderQty * pp.StandardCost) AS DECIMAL(18, 2)) AS EstimatedProductCost,
-	CAST(SUM(sod.LineTotal) - SUM(sod.OrderQty * pp.StandardCost) AS DECIMAL(18,2)) AS EstimatedGrossProfit,
-	CAST((SUM(sod.LineTotal) - SUM(sod.OrderQty * pp.StandardCost)) * 100.0 
-			/ NULLIF(SUM(sod.LineTotal), 0) AS	DECIMAL(18, 2)) AS EstimatedGrossMarginPcnt
+	CAST(SUM(sod.OrderQty * pp.StandardCost) AS DECIMAL(18, 2)) AS EstimatedProductCost
 FROM Sales.SalesOrderDetail AS sod
 INNER JOIN Production.Product AS pp
-	ON sod.ProductID = pp.ProductID;
+	ON sod.ProductID = pp.ProductID)
+
+SELECT *, CAST(TotalRevenue - EstimatedProductCost AS DECIMAL(18,2)) AS EstimatedGrossProfit,
+		CAST((TotalRevenue - EstimatedProductCost) * 100.0 
+			/ NULLIF(TotalRevenue, 0) AS DECIMAL(18, 2)) AS EstimatedGrossMarginPcnt
+FROM RevenueStats;
 
 GO
 
 ----------------- 2. PROFITABILITY BY PRODUCT CATEGORY
-SELECT COALESCE(cat.Name, 'Uncategorised') AS Category,
+SELECT COALESCE(cat.Name, 'Uncategorized') AS Category,
 	CAST(SUM(sod.LineTotal) AS DECIMAL(18,2)) AS TotalRevenue, 
 	CAST(SUM(sod.OrderQty * pp.StandardCost) AS DECIMAL(18, 2)) AS EstimatedProductCost,
 	CAST(SUM(sod.LineTotal) - SUM(sod.OrderQty * pp.StandardCost) AS DECIMAL(18,2)) AS EstimatedGrossProfit,
@@ -42,12 +39,12 @@ LEFT JOIN Production.ProductSubcategory AS subc
 	ON pp.ProductSubcategoryID = subc.ProductSubcategoryID
 LEFT JOIN Production.ProductCategory AS cat
 	ON subc.ProductCategoryID = cat.ProductCategoryID
-GROUP BY COALESCE(cat.Name, 'Uncategorised')
+GROUP BY COALESCE(cat.Name, 'Uncategorized')
 ORDER BY EstimatedGrossProfit DESC;
 
 GO
 
------------------ TOP 10 PRODUCTS BY ESTIMATED GROSS PROFIT
+----------------- 3. TOP 10 PRODUCTS BY ESTIMATED GROSS PROFIT
 WITH ProductStats AS (
 SELECT pp.ProductID, pp.Name AS ProductName, cat.Name AS Category,
 	SUM(sod.OrderQty) AS TotalUnitsSold,
@@ -63,17 +60,19 @@ INNER JOIN Production.ProductSubcategory AS subc
 	ON pp.ProductSubcategoryID = subc.ProductSubcategoryID
 INNER JOIN Production.ProductCategory AS cat
 	ON cat.ProductCategoryID = subc.ProductCategoryID
-GROUP BY pp.ProductID, pp.Name, cat.Name)
+GROUP BY pp.ProductID, pp.Name, cat.Name), 
+ProductContributions AS (
+SELECT *, SUM(EstimatedGrossProfit) OVER ( ORDER BY EstimatedGrossProfit DESC, ProductID ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
+    ) AS CumGrossProfit,
+    SUM(EstimatedGrossProfit) OVER () AS OverallGrossProfit
+FROM ProductStats )
 
-SELECT TOP 10 ProductName, Category, TotalRevenue, EstimatedGrossProfit,
-	SUM(EstimatedGrossProfit) OVER (ORDER BY EstimatedGrossProfit DESC
-			ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS CumGrossProfit,
-	CAST(
-			SUM(EstimatedGrossProfit) OVER (ORDER BY EstimatedGrossProfit DESC) * 100.0
-			/ SUM(EstimatedGrossProfit) OVER () 
-	AS DECIMAL(18, 2)) AS CumGrossProfitPcnt,
+SELECT TOP 10 ProductID, ProductName, Category, TotalRevenue, EstimatedGrossProfit,
+	CumGrossProfit,
+	CAST(CumGrossProfit * 100.0
+			/ NULLIF(OverallGrossProfit, 0)	AS DECIMAL(18, 2)) AS CumGrossProfitPcnt,
 	EstimatedGrossMarginPcnt
-FROM ProductStats
+FROM ProductContributions
 WHERE EstimatedGrossProfit >= 0
 ORDER BY EstimatedGrossProfit DESC;
 
@@ -119,7 +118,7 @@ INNER JOIN Production.ProductCategory AS cat
 	ON cat.ProductCategoryID = subc.ProductCategoryID
 GROUP BY pp.ProductID, cat.Name)
 
-SELECT Category, COUNT(*) AS ProductsSold,
+SELECT Category, COUNT(*) AS TotalProducts,
 	SUM(
 		CASE
 			WHEN EstimatedGrossProfit < -0.01 THEN 1
@@ -144,18 +143,34 @@ GO
 
 ----------------- 6. MONTHLY ESTIMATED PROFITABILITY
 
+WITH MonthlyProfitability AS (
 SELECT YEAR(soh.OrderDate) AS OrderYear, MONTH(soh.OrderDate) AS OrderMonth,
-	COUNT(DISTINCT soh.SalesOrderID) AS TotalOrders,
-	CAST(SUM(sod.LineTotal) AS DECIMAL(18, 2)) AS TotalRevenue,
-	CAST(SUM(sod.OrderQty * pp.StandardCost) AS DECIMAL(18, 2)) AS EstimatedProductCost,
-	CAST(SUM(sod.LineTotal) - SUM(sod.OrderQty * pp.StandardCost) AS DECIMAL(18, 2)) AS EstiamtedGrossProfit,
-	CAST((SUM(sod.LineTotal) - SUM(sod.OrderQty * pp.StandardCost)) * 100.0
-		/ NULLIF(SUM(sod.LineTotal), 0) 
-		AS DECIMAL(18, 2)) AS EstimatedGrossMarginPcnt
+    DATENAME(MONTH, soh.OrderDate) AS MonthName, COUNT(DISTINCT soh.SalesOrderID) AS TotalOrders,
+    SUM(sod.OrderQty) AS TotalUnitsSold, SUM(sod.LineTotal) AS TotalRevenue,
+    SUM(sod.OrderQty * pp.StandardCost) AS EstimatedProductCost, SUM(sod.LineTotal)
+        - SUM(sod.OrderQty * pp.StandardCost) AS EstimatedGrossProfit
 FROM Sales.SalesOrderHeader AS soh
 INNER JOIN Sales.SalesOrderDetail AS sod
-	ON soh.SalesOrderID = sod.SalesOrderID
+    ON soh.SalesOrderID = sod.SalesOrderID
 INNER JOIN Production.Product AS pp
-	ON sod.ProductID = pp.ProductID
-GROUP BY YEAR(soh.OrderDate), MONTH(soh.OrderDate)
+    ON sod.ProductID = pp.ProductID
+GROUP BY YEAR(soh.OrderDate), MONTH(soh.OrderDate), DATENAME(MONTH, soh.OrderDate)
+),
+MonthlyChanges AS (
+SELECT *, EstimatedGrossProfit - LAG(EstimatedGrossProfit) OVER (ORDER BY OrderYear, OrderMonth) AS MoMEstimatedGrossProfitChange
+FROM MonthlyProfitability
+)
+SELECT OrderYear, OrderMonth, MonthName, TotalOrders, TotalUnitsSold,
+    CAST(TotalRevenue AS DECIMAL(18,2)) AS TotalRevenue,
+    CAST(EstimatedProductCost AS DECIMAL(18,2)) AS EstimatedProductCost,
+    CAST(EstimatedGrossProfit AS DECIMAL(18,2)) AS EstimatedGrossProfit,
+    CAST(
+        EstimatedGrossProfit * 100.0
+        / NULLIF(TotalRevenue, 0)
+        AS DECIMAL(18,2)
+    ) AS EstimatedGrossMarginPcnt,
+    CAST(
+        MoMEstimatedGrossProfitChange AS DECIMAL(18,2)
+    ) AS MoMEstimatedGrossProfitChange
+FROM MonthlyChanges
 ORDER BY OrderYear, OrderMonth;
