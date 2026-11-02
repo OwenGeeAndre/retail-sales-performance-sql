@@ -16,7 +16,7 @@ This project aims to analyze sales performance and profitability of a cycling st
 
 5. **Investigate differences in sales and profitability:** By examining order volume and sales volume, average order value, product contribution, product mix and differences across periods and territories, I'll investigate possible variations in business performance.
   
-6. **Assess data quality and identify sales pattern:** I'll check for missing and duplicate records, reconcile revenue, unusual changes in sales activity, product-category sales cutoffs.
+6. **Assess data quality and identify sales pattern:** I'll check for missing and duplicate records, reconcile revenue.
 
 
 ## Business Questions
@@ -30,7 +30,7 @@ The analysis is designed to answer the following questions:
 | 3. | Profitability | 6. What are the estimated gross profit and margin at business, category, and product levels? <br> 7. Which products have the weakest or negative estimated margins? <br> |
 | 4. | Territory Performance | 8. Which territories generate the highest revenue and estimated gross profit? <br> 9. How does product-category contribution differ across territories? <br> 10. Which territories have relatively weak estimated profitability? <br> |
 | 5. | Performance Drivers | 11. What factors are associated with differences in revenue across periods and territories? <br> 12. Do high-revenue products also generate strong estimated gross profitability? <br> |
-| 6. | Data Reliability and Discontinuation | 13. Are the transaction records sufficiently complete and internally consistent? <br> 14. Are there unusual sales patterns or category cutoffs that could distort comparisons? <br> |
+
 
 ## Scope and Methodological Limitation
 
