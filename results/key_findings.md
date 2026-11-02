@@ -12,7 +12,7 @@ The initial exploration established the size and structure of the primary datase
 | :--- | ---: | ---: | ---: |
 | Number of Records | 31,465 | 121,317 | 504 |
 
-The Sales Order Header contains records of every sales, Sales Order Detail contains records of every item sold in each sale. The Catalogue of products contain 504 products, this is not the number of distinct products purchased, just available items offered.
+The Sales Order Header contains records of every sales, Sales Order Detail contains records of every item sold in each order. The Catalogue of products contain 504 products, this is not the number of distinct products purchased, just available items offered.
 
 ## 2.2 Sales Period
 The available sales records cover the following period:
@@ -36,7 +36,7 @@ These figures establish the baseline against which subsequent analyses of sales 
 # 3. Data Quality Assessment
 
 ## 3.1 Order Status Distribution
-All sale records have a distribution status "5", which generally is adopted as "delivered/completed"
+All sale records have a distribution status "5", which generally is adopted as delivered/completed"
 
 ## 3.2 Order-Line Completeness and Identifier Uniqueness
 All 121,317 order-detail records are unique.
@@ -49,7 +49,7 @@ The following were checked for missing values:
 No missing values were identified from the data
 
 ## 3.3 Revenue Calculation Validation
-The difference estimated when comparing the revenue in the data (LineTotal) and calculated revenue (quantity ordered * unit price (1-unit price discount)) is 2.5cents across 121,217 records, this is negligible and indicates strong consistency
+The difference estimated when comparing the revenue in the data (LineTotal) and calculated revenue (quantity ordered * unit price (1-unit price discount)) is 2.5cents across 121,317 records, this is negligible and indicates strong consistency
 
 Also, the difference between the sum of Subtotal from the header table and sum of LineTotal from detail table is 0.4cents revealing a strong consistency between both tables
 
@@ -94,6 +94,7 @@ The ten highest estimated gross-profit products generated a cumulative estimated
 All ten products belong to the Bikes category.
 
 ## 5.4 10 Lowest-margin products
+* These are products that had sold at least 100 units
 * Seven of the ten products belong to Clothing. Three belong to Bikes.
 * Long-Sleeve Logo Jersey, L (ProductID 715) records the lowest estimated gross margin at -27.67%, with an estimated gross loss of $54,986.27.
 * Road-650 Red, 44 (ProductID 762) records the largest absolute estimated gross loss among the ten, at $153,696.12, with an estimated gross margin of -16.29%.
@@ -114,7 +115,7 @@ Overall, 56 out of 266 products sold (21.05%) recorded negative estimated gross 
 * April 2025 recorded estimated gross profit of $735,187.74 and a margin of 14.08%.
 * May 2025 recorded estimated gross profit of $789,823.55 and a margin of 41.39%.
 
-# 6. Other Findings
+# 6. Advanced Analysis Findings
 
 ## 6.1 Territory performance
 - Southwest generated the highest revenue: $24.18 million.
@@ -134,7 +135,7 @@ Overall, 56 out of 266 products sold (21.05%) recorded negative estimated gross 
 - The top ten products contributed 28.23% of total revenue.
 
 
-Key Findings
+# Key Findings
 1. **Revenue leader:** Mountain-200 Black, 38 generated the highest product revenue at $4,400,592.80, representing 4.01% of total revenue.
 2. **Revenue concentration:** The top 6 products accounted for 20.29% of total revenue, the top 10 for 28.23%, and the top 20 for 44.20%. Revenue is therefore distributed across a relatively broad product portfolio.
 3. **Strong revenue and positive estimated profitability:** The six highest-revenue products were Mountain-200 variants. Their estimated gross margins ranged from 15.30% to 20.15%.
