@@ -10,6 +10,7 @@ retail-sales-performance-sql/
 │   ├── 03_sales_performance.sql
 │   ├── 04_profitability.sql
 │   └── 05_advanced_analysis.sql
+│   └── 06_diagnosis_analysis.sql
 ├── results/
 │   └── key_findings.md
 └── visuals/
