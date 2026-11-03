@@ -14,9 +14,9 @@ This project aims to analyze sales performance and profitability of a cycling st
 
 4. **Examine sales and profitability across territories:** Beyond the products, territories hold influence on the performance of sales. To prove this, I'll monitor the revenue, estimated gross profit and margin, cateogory contribution and product mix and performance across territories.
 
-5. **Investigate differences in sales and profitability:** By examining order volume and sales volume, average order value, product contribution, product mix and differences across periods and territories, I'll investigate possible variations in business performance.
+5. **Investigate differences in sales and profitability:** Examine variations in revenue, order volume, units sold, average order value, product contribution, product mix and estimated profitability across periods and territories. Investigate how order size, order type and customer type relate to observed sales patterns.
   
-6. **Assess data quality and identify sales pattern:** I'll check for missing and duplicate records, reconcile revenue.
+6. **Assess data quality and investigate unusual sales patterns:** I'll check for missing and duplicate records, reconcile revenue between order details and order headers. I'll also investigate revenue patterns.
 
 
 ## Business Questions
@@ -30,6 +30,7 @@ The analysis is designed to answer the following questions:
 | 3. | Profitability | 6. What are the estimated gross profit and margin at business, category, and product levels? <br> 7. Which products have the weakest or negative estimated margins? <br> |
 | 4. | Territory Performance | 8. Which territories generate the highest revenue and estimated gross profit? <br> 9. How does product-category contribution differ across territories? <br> 10. Which territories have relatively weak estimated profitability? <br> |
 | 5. | Performance Drivers | 11. What factors are associated with differences in revenue across periods and territories? <br> 12. Do high-revenue products also generate strong estimated gross profitability? <br> |
+| 6. | Diagnostic Analysis | 13. Are there recurring daily or month-end revenue patterns? <br> 14. How does sales performance differ within a month? <br> 15. How does product-category contribution change? <br> 16. Are differences in average order value associated with differences in order size? <br> 17. Is there a pattern to online and non-online orders? <br> 18. Which customer types are associated with the observed sales concentration?
 
 
 ## Scope and Methodological Limitation
